@@ -1,4 +1,4 @@
-# Geospatial Analysis with R Workshop
+# Taller de análisis de datos espaciales con R y QGIS asistido por ChatGPT
 
 Recursos utilizados en el Taller de análisis de datos espaciales en R y QGIS, asistido por ChatGPT, impartido durante el IGISc 2023.
 
