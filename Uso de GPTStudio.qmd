@@ -1,0 +1,90 @@
+---
+title: "Uso de GPTStudio"
+author: "Cristian Silva"
+format: html
+editor: visual
+---
+
+## Introducción
+
+En esta práctica instalarás del paquete `gptstudio` para *R*, el cual proporciona complementos de *RStudio* que permiten la codificación, escritura y análisis asistidos por *ChatGPT*.
+
+## Preparación del entorno
+
+Instala los paquetes que usaremos durante esta práctica:
+
+```{r InstalarPaquetes}
+# Instala el paquete y complemento GPTStudio
+install.packages('gptstudio', repos = c('https://jameshwade.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Usar temporalmente la API Key de OpenAI:
+
+```{r DefinirAPIKey}
+Sys.setenv(OPENAI_API_KEY = "<APIKEY>")
+```
+
+### Alternativa
+
+Opcionalmente, puedes ejecutar lo siguiente para dejar fija tu API Key en tu computadora. Dejar persistente la API Key:
+
+```{r AbrirRenviron}
+require(usethis)
+edit_r_environ()
+```
+
+Agregar la llave API de OpenAI que obtuviste en el archivo `.Renviron`:
+
+```{bash}
+OPENAI_API_KEY="<APIKEY>"
+```
+
+Reinicia la sesión de R, `Menú Session > Restart R`
+
+## Ejercicios con GPTStudio
+
+### Correción de ortografía y gramática
+
+Corrije la gramática y ortografía de la siguiente línea. Selecciona el texto y usa el comando `Addins > GPTStudio > Spelling and Grammar` y espera un momento a que el texto se envíe a *ChatGPT* y lo corrija.
+
+> Este testo esta mal escribido y no se hentiende nada de lo ke dise haki.
+
+### Comentar automáticamente el código
+
+Agrega automáticamente comentarios sobre el funcionamiento de las líneas de código de la siguiente función. Selecciona el código del siguiente bloque y usa el comando `Addins > GPTStudio > Comment your code` y espera un momento a que el código se envíe a *ChatGPT* y lo comente.
+
+```{r FuncionPorcentaje}
+calcular_porcentaje <- function(fraccion, total) {
+  porcentaje <- fraccion / total * 100
+  mensaje <- paste("El porcentaje es: ", porcentaje, "%") 
+  return(mensaje)
+}
+```
+
+### *ChatGPT* dentro del código
+
+Selecciona el *prompt* que está comentado en el siguiente bloque. Usa el comando `Addins > GPTStudio > ChatGPT in Source` y espera un momento a que el código se envíe a *ChatGPT* y sustituya la instrucción con el resultado.
+
+```{r CreaFuncionConGPT}
+# Crea una función llamada "resta" que devuelva la diferencia del número a menos el número b, y si el resultado es negativo que escriba un mensaje que diga "El resultado de la resta es negativo". Agrega comentarios al código para entenderlo mejor.
+```
+
+Ejecuta el código del bloque anterior con `Run current chunk` y prueba la función que generó *ChatGPT* ejecutando el siguiente bloque:
+
+```{r PruebaFuncion}
+resta(3,10)
+```
+
+### Ventana de ChatGPT en RStudio
+
+Usa el comando `Addins > GPTStudio > ChatGPT in Source` para abrir una ventana de *ChatGPT* integrada en la interfaz de *RStudio*.
+
+Intenta enviar diferentes prompts de prueba a *ChatGPT* a través de esta ventana. Puedes usarla para pedir códigos, pedir que te revise un error, obtener una recomendación de algún paquete, y mucho más. Prueba con la siguiente petición:
+
+> Recomiéndame un paquete de R para crear mapas temáticos de manera sencilla.
+
+## Referencias
+
+-   Wade J. (2023). *gpgptstudio: Use Large Language Models Directly in your Development Environment. (n.d.).* R-Universe. Consultado el 1 de noviembre de 2023 en <https://jameshwade.r-universe.dev/gptstudio>.
+
+-   Nivard M., Wade J., Calderon S. (2023). *gptstudio: Use Large Language Models Directly in your Development Environment.* R package version 0.3.1.9000, Consultado el 1 de noviembre de 2023 en <https://michelnivard.github.io/gptstudio/>, <https://github.com/MichelNivard/gptstudio>.

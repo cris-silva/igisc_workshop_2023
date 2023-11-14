@@ -1,0 +1,22 @@
+---
+title: "Análisis con R y ChatGPT"
+author: "Cristian Silva"
+format: html
+editor: visual
+---
+
+Inserta en esta sección los bloques necesarios para abir las capas de la línea 1 del metro, de los robos a transeúnte y de la tabla de alcaldes que obtuviste en los ejercicios anteriores. Para insertar un bloque usa el menú `Code > Insert Chunk` o presiona las teclas `Control+Alt+I`.
+
+```{r}
+# Pega el código de ChatGPT aquí!
+```
+
+Escribe algunas notas o copia el prompt que usaste aquí.
+
+```{r}
+# Pega el código de ChatGPT también aquí!
+```
+
+```{r}
+# Y aquí!
+```
